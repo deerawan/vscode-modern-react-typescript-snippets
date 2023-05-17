@@ -1,0 +1,20 @@
+{
+  "name": "modern-react-snippets",
+  "displayName": "modern-react-snippets",
+  "description": "Modern React snippets. No class!!",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescriptreact.code-snippets"
+      }
+    ]
+  }
+}
