@@ -1,135 +1,145 @@
 {
-	"React Component": {
-		"prefix": "fc",
-		"body": [
-			"export interface ${1:$TM_FILENAME_BASE}Props {",
-			"\t${2:prop}: ${3:string}",
-			"}",
-			"",
-			"export function ${1:$TM_FILENAME_BASE}({ $2 }: ${1:$TM_FILENAME_BASE}Props) {",
-			"\treturn $4",
-			"}"
-		]
-	},
-	"React Component:Default Export": {
-		"prefix": "fcd",
-		"body": [
-			"export interface ${1:$TM_FILENAME_BASE}Props {",
-			"\t${2:prop}: ${3:string}",
-			"}",
-			"",
-			"export default function ${1:$TM_FILENAME_BASE}({ $2 }: ${1:$TM_FILENAME_BASE}Props) {",
-			"\treturn $4",
-			"}"
-		]
-	},
-	"React Component:Expression": {
-		"prefix": "fce",
-		"body": [
-			"export interface ${1:$TM_FILENAME_BASE}Props {",
-			"\t${2:prop}: ${3:string}",
-			"}",
-			"",
-			"export const ${1:$TM_FILENAME_BASE} = ({ $2 }: ${1:$TM_FILENAME_BASE}Props) => {",
-			"\treturn $4",
-			"}"
-		]
-	},
-	"React Component:Expression:Default Export": {
-		"prefix": "fced",
-		"body": [
-			"export interface ${1:$TM_FILENAME_BASE}Props {",
-			"\t${2:prop}: ${3:string}",
-			"}",
-			"",
-			"const ${1:$TM_FILENAME_BASE} = ({ $2 }: ${1:$TM_FILENAME_BASE}Props) => {",
-			"\treturn $4",
-			"}",
-			"",
-			"export default ${1:$TM_FILENAME_BASE}"
-		]
-	},
+  "React Component:Function Declaration": {
+    "prefix": "rcf",
+    "body": [
+      "export interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${2:prop}: ${3:string};",
+      "}",
+      "",
+      "export function $1({ $2 }: $1Props) {",
+			"\t$4"
+      "\treturn $5",
+      "}"
+    ]
+  },
+	"React Component:Function Declaration:Simple": {
+    "prefix": "rcf-s",
+    "body": [
+      "export function ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}() {",
+			"\t$2"
+      "\treturn $3",
+      "}"
+    ]
+  },
+  "React Component:Function Declaration with Default Export": {
+    "prefix": "rcfd",
+    "body": [
+      "export interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${2:prop}: ${3:string}",
+      "}",
+      "",
+      "export default function $1({ $2 }: $1Props) {",
+			"\t$4",
+      "\treturn $5",
+      "}",
+    ]
+  },
+	"React Component:Function Declaration with Default Export:Simple": {
+    "prefix": "rcfd-s",
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}() {",
+			"\t$4",
+      "\treturn $5",
+      "}",
+    ]
+  },
+  "React Component:Arrow Function": {
+    "prefix": "rca",
+    "body": [
+      "export interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${2:prop}: ${3:string}",
+      "}",
+      "",
+      "export const $1 = ({ $2 }: $1Props) => {",
+			"\t$4",
+      "\treturn $5",
+      "}"
+    ]
+  },
+  "React Component:Arrow Function:Default Export": {
+    "prefix": "rcad",
+    "body": [
+      "export interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${2:prop}: ${3:string}",
+      "}",
+      "",
+      "const $1 = ({ $2 }: $1Props) => {",
+			"\t$4",
+      "\treturn $5",
+      "}",
+      "",
+      "export default $1"
+    ]
+  },
   "React useCallback": {
-		"prefix": "ucb",
-		"body": [
-      "const $1 = useCallback(($4) => {",
-      "\t$2",
+    "prefix": "ucb",
+    "body": ["const $1 = useCallback(($4) => {", "\t$2", "}, [$3])"]
+  },
+  "React useContext": {
+    "prefix": "uc",
+    "body": "const $1 = useContext$3($2)"
+  },
+  "React useDebugValue": {
+    "prefix": "udb",
+    "body": "useDebugValue$2($1)"
+  },
+  "React useDeferredValue": {
+    "prefix": "udf",
+    "body": "const $1 = useDeferredValue$3($2)"
+  },
+  "React useEffect": {
+    "prefix": "ue",
+    "body": ["useEffect(() => {", "\t$1", "}, [$2])"]
+  },
+  "React useEffect with return": {
+    "prefix": "uer",
+    "body": [
+      "useEffect(() => {",
+      "\t$1",
+      "\treturn () => {",
+      "\t\t$2",
+      "\t}",
       "}, [$3])"
     ]
-	},
-  "React useContext": {
-		"prefix": "uc",
-		"body": "const $1 = useContext$3($2)"
-	},
-  "React useDebugValue": {
-		"prefix": "udb",
-		"body": "useDebugValue$2($1)"
-	},
-  "React useDeferredValue": {
-		"prefix": "udf",
-		"body": "const $1 = useDeferredValue$3($2)"
-	},
-	"React useEffect": {
-		"prefix": "ue",
-		"body": [
-			"useEffect(() => {",
-			"\t$1",
-			"}, [$2])"
-		]
-	},
-  "React useEffect with return": {
-		"prefix": "uer",
-		"body": [
-			"useEffect(() => {",
-			"\t$1",
-			"\treturn () => {",
-			"\t\t$2",
-			"\t}",
-			"}, [$3])"
-		]
-	},
+  },
   "React useImperativeHandle": {
-		"prefix": "uih",
-		"body": [
-			"useImperativeHandle(${1:ref}, () => {",
-			"\treturn {",
-			"\t\t${2:method}() {",
-			"\t\t\t$3",
-			"\t\t}",
-			"\t}",
-			"}, [$4])"
-		]
-	},
+    "prefix": "uih",
+    "body": [
+      "useImperativeHandle(${1:ref}, () => {",
+      "\treturn {",
+      "\t\t${2:method}() {",
+      "\t\t\t$3",
+      "\t\t}",
+      "\t}",
+      "}, [$4])"
+    ]
+  },
   "React useLayoutEffect": {
-		"prefix": "ule",
-		"body": [
-			"useLayoutEffect(() => {",
-			"\t$1",
-			"}, [$2])"
-		]
-	},
+    "prefix": "ule",
+    "body": ["useLayoutEffect(() => {", "\t$1", "}, [$2])"]
+  },
   "React useMemo": {
-		"prefix": "um",
-		"body": "const $1 = useMemo(() => $2, [$3])"
-	},
-	"React useReducer": {
-		"prefix": "urd",
-		"body": "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialArg}, ${3:init})",
-	},
-	"React useRef": {
-		"prefix": "ur",
-		"body": "const $1 = useRef$3($2)"
-	},
+    "prefix": "um",
+    "body": "const $1 = useMemo(() => $2, [$3])"
+  },
+  "React useReducer": {
+    "prefix": "urd",
+    "body": "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialArg}, ${3:init})"
+  },
+  "React useRef": {
+    "prefix": "ur",
+    "body": "const $1 = useRef$3($2)"
+  },
   "React useState": {
-		"prefix": "us",
-		"body": "const [$1, set${1/(.*)/${1:/capitalize}/}] = useState$3($2)"
-	},
-	"React useSyncExternalStore": {
-		"prefix": "uses",
-		"body": "const $1 = useSyncExternalStore(${2:subscribe}, ${3:getSnapshot}, ${4:getServerSnapshot?})"
-	},
-	"React useTransition": {
-		"prefix": "ut",
-		"body": "const [${1:isPending}, ${2:startTransition}] = useTransition()"
-	},
+    "prefix": "us",
+    "body": "const [$1, set$1] = useState$3($2);"
+  },
+  "React useSyncExternalStore": {
+    "prefix": "uses",
+    "body": "const $1 = useSyncExternalStore(${2:subscribe}, ${3:getSnapshot}, ${4:getServerSnapshot?})"
+  },
+  "React useTransition": {
+    "prefix": "ut",
+    "body": "const [${1:isPending}, ${2:startTransition}] = useTransition()"
+  }
 }
