@@ -1,65 +1,239 @@
-# modern-react-snippets README
+# Modern React Typescript Snippets
 
-This is the README for your extension "modern-react-snippets". After writing up a brief description, we recommend including the following sections.
+This extension provides you with a variety of shortcuts to make writing modern React components faster and easier using Typescript.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Modern React with Typescript. No class. No PropTypes.
+- Component snippets auto populate the component name based on filename which can be kebab-case or PascalCase
+- Component snippets support TS interface and type
+- Component snippets support functional declaration and arrow function
+- useState hook snippet auto populates the setter name
 
-For example if there is an image subfolder under your extension project workspace:
+## Snippets
 
-\!\[feature X\]\(images/feature-x.png\)
+| Snippet  | Renders                                |
+| -------- | -------------------------------------- | --- |
+| `rcf`    | Component using functional declaration |
+| `rcf-d`  | ^ with default export                  |
+| `rcf-p`  | ^ with props                           |
+| `rcf-dp` | ^ with default export and props        |
+| `rca`    | Component using arrow function         |
+| `rca-d`  | ^ with default export                  |
+| `rca-p`  | ^ with props                           |
+| `rca-dp` | ^ with default export and props        |
+| `rucb`   | useCallback Hook                       |
+| `ruct`   | useContext Hook                        |
+| `rudb`   | useDebugValue Hook                     |
+| `rudf`   | useDeferredValue Hook                  |
+| `rue`    | useEffect Hook                         |
+| `rue-r`  | useEffect Hook with return             |
+| `rui`    | useImperativeHandle Hook               |
+| `rul`    | useLayoutEffect Hook                   |
+| `rum`    | useMemo Hook                           |     
+| `rurd`   | useReducer Hook                        |
+| `rurf`   | useRef Hook                            |
+| `rust`   | useState Hook                          |
+| `rusy`   | useSyncExternalStore Hook              |
+| `rut`    | useTransition Hook                     |
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Snippets Expansions
 
-## Requirements
+### Component using functional declaration
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+#### `rcf` - basic
 
-## Extension Settings
+```typescriptreact
+export function |() {
+  |
+  return |
+}
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+#### `rcf-d` - with default export
 
-For example:
+```typescriptreact
+export default function |() {
+  |
+  return |
+}
+```
 
-This extension contributes the following settings:
+#### `rcf-p` - with props
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+```typescriptreact
+export interface |Props {
+  |:|
+}
 
-## Known Issues
+export function |({ | }: |Props) {
+  |
+  return |
+}
+```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+#### `rcf-dp` - with default export and props
 
-## Release Notes
+```typescriptreact
+export interface |Props {
+  |:|
+}
 
-Users appreciate release notes as you update your extension.
+export default function |({ | }: |Props) {
+  |
+  return |
+}
+```
 
-### 1.0.0
+### Component using arrow function
 
-Initial release of ...
+#### `rca` - basic
 
-### 1.0.1
+```typescriptreact
+export const | = () => {
+  |
+  return |
+}
+```
 
-Fixed issue #.
+#### `rca-d` - with default export
 
-### 1.1.0
+```typescriptreact
+const | = () => {
+  |
+  return |
+}
 
-Added features X, Y, and Z.
+export default |;
+```
 
----
+#### `rca-p` - with props
 
-## Working with Markdown
+```typescriptreact
+export interface |Props {
+  |:|
+}
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+export const | = ({ | }: |Props) => {
+  |
+  return |
+}
+```
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+#### `rca-dp` - with default export and props
 
-## For more information
+```typescriptreact
+export interface |Props {
+  |:|
+}
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+const | = ({ | }: |Props) => {
+  |
+  return |
+}
 
-**Enjoy!**
+export default |;
+```
+
+### Hooks
+
+#### `rucb` - useCallback Hook
+
+```typescriptreact
+const | = useCallback((|) => {
+  |
+}, [|])
+```
+
+#### `ruct` - useContext Hook
+
+```typescriptreact
+const | = useContext|(|)
+```
+
+#### `rudb` - useDebugValue Hook
+
+```typescriptreact
+useDebugValue|(|)
+```
+
+#### `rudf` - useDeferredValue Hook
+
+```typescriptreact
+const | = useDeferredValue|(|)
+```
+
+#### `rue` - useEffect Hook
+
+```typescriptreact
+useEffect(() => {
+  |
+}, [|])
+```
+
+#### `rue-r` - useEffect Hook with return
+
+```typescriptreact
+useEffect(() => {
+  |
+  return () => {
+    |
+  }
+}, [|])
+```
+
+#### `rui` - useImperativeHandle Hook
+
+```typescriptreact
+useImperativeHandle(|, () => ({
+  return {
+    |() {
+      |
+    }
+  }
+}), [|])
+```
+
+#### `rul` - useLayoutEffect Hook
+
+```typescriptreact
+useLayoutEffect(() => {
+  |
+}, [|])
+```
+
+#### `rum` - useMemo Hook
+
+```typescriptreact
+const | = useMemo(() => |, [|])
+```
+
+#### `rurd` - useReducer Hook
+
+```typescriptreact
+const [|, |] = useReducer(|, |, |)
+```
+
+#### `rurf` - useRef Hook
+
+```typescriptreact
+const | = useRef|(|)
+```
+
+#### `rust` - useState Hook
+
+```typescriptreact
+const [|, set|] = useState|(|)
+```
+
+#### `rusy` - useSyncExternalStore Hook
+
+```typescriptreact
+const | = useSyncExternalStore(|, |, |)
+```
+
+#### `rut` - useTransition Hook
+
+```typescriptreact
+const [|, |] = useTransition(|, |)
+```
