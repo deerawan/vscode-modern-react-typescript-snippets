@@ -13,15 +13,15 @@ This extension provides you with a variety of shortcuts to make writing modern R
 ## Snippets
 
 | Snippet  | Renders                                |
-| -------- | -------------------------------------- | --- |
+| -------- | -------------------------------------- |
 | `rcf`    | Component using functional declaration |
 | `rcf-d`  | ^ with default export                  |
-| `rcf-p`  | ^ with props                           |
-| `rcf-dp` | ^ with default export and props        |
+| `rcf-i`  | ^ with interface                       |
+| `rcf-di` | ^ with default export and interface    |
 | `rca`    | Component using arrow function         |
 | `rca-d`  | ^ with default export                  |
-| `rca-p`  | ^ with props                           |
-| `rca-dp` | ^ with default export and props        |
+| `rca-i`  | ^ with interface                       |
+| `rca-di` | ^ with default export and interface    |
 | `rucb`   | useCallback Hook                       |
 | `ruct`   | useContext Hook                        |
 | `rudb`   | useDebugValue Hook                     |
@@ -30,7 +30,7 @@ This extension provides you with a variety of shortcuts to make writing modern R
 | `rue-r`  | useEffect Hook with return             |
 | `rui`    | useImperativeHandle Hook               |
 | `rul`    | useLayoutEffect Hook                   |
-| `rum`    | useMemo Hook                           |     
+| `rum`    | useMemo Hook                           |
 | `rurd`   | useReducer Hook                        |
 | `rurf`   | useRef Hook                            |
 | `rust`   | useState Hook                          |
@@ -59,7 +59,7 @@ export default function |() {
 }
 ```
 
-#### `rcf-p` - with props
+#### `rcf-i` - with interface
 
 ```typescriptreact
 export interface |Props {
@@ -72,7 +72,7 @@ export function |({ | }: |Props) {
 }
 ```
 
-#### `rcf-dp` - with default export and props
+#### `rcf-di` - with default export and interface
 
 ```typescriptreact
 export interface |Props {
@@ -107,7 +107,7 @@ const | = () => {
 export default |;
 ```
 
-#### `rca-p` - with props
+#### `rca-i` - with interface
 
 ```typescriptreact
 export interface |Props {
@@ -120,7 +120,7 @@ export const | = ({ | }: |Props) => {
 }
 ```
 
-#### `rca-dp` - with default export and props
+#### `rca-di` - with default export and interface
 
 ```typescriptreact
 export interface |Props {

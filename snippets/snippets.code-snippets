@@ -8,7 +8,7 @@
       "}"
     ]
   },
-  "React Component:Function - Default": {
+  "React Component:Function-Default": {
     "prefix": "rcf-d",
     "body": [
       "export default function ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}() {",
@@ -17,29 +17,29 @@
       "}",
     ]
   },
-  "React Component:Function - Props": {
-    "prefix": "rcf-p",
+  "React Component:Function-Interface": {
+    "prefix": "rcf-i",
     "body": [
-      "${2:export} ${3|interface,type|} ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
-      "\t${4:prop}: ${5:string};",
+      "${2:export} interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${3:prop}: ${4:string};",
       "}",
       "",
-      "export function $1({ $4 }: $1Props) {",
-			"\t$6"
-      "\treturn $7",
+      "export function $1({ $3 }: $1Props) {",
+			"\t$5"
+      "\treturn $6",
       "}"
     ]
   },
-  "React Component:Function - Default & Props": {
-    "prefix": "rcf-dp",
+  "React Component:Function-Default & Interface": {
+    "prefix": "rcf-di",
     "body": [
-      "${2:export} ${3|interface,type|} ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
-      "\t${4:prop}: ${5:string}",
+      "${2:export} interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${3:prop}: ${4:string}",
       "}",
       "",
-      "export default function $1({ $4 }: $1Props) {",
-			"\t$6",
-      "\treturn $7",
+      "export default function $1({ $3 }: $1Props) {",
+			"\t$5",
+      "\treturn $6",
       "}",
     ]
   },
@@ -52,7 +52,7 @@
       "}"
     ]
   },
-  "React Component:Arrow Function - Default": {
+  "React Component:Arrow Function-Default": {
     "prefix": "rca-d",
     "body": [
       "const ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}} = () => {",
@@ -63,29 +63,29 @@
       "export default $1;"
     ]
   },
-  "React Component:Arrow Function - Props": {
-    "prefix": "rca-p",
+  "React Component:Arrow Function-Interface": {
+    "prefix": "rca-i",
     "body": [
-      "${2:export} ${3|interface,type|} ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
-      "\t${4:prop}: ${5:string}",
+      "${2:export} interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${3:prop}: ${4:string}",
       "}",
       "",
-      "export const $1 = ({ $4 }: $1Props) => {",
-			"\t$6",
-      "\treturn $7",
+      "export const $1 = ({ $3 }: $1Props) => {",
+			"\t$5",
+      "\treturn $6",
       "}"
     ]
   },
-  "React Component:Arrow Function - Default & Props": {
-    "prefix": "rca-dp",
+  "React Component:Arrow Function-Default & Interface": {
+    "prefix": "rca-di",
     "body": [
-      "${2:export} ${3|interface,type|} ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
-      "\t${4:prop}: ${5:string}",
+      "${2:export} interface ${1:${TM_FILENAME_BASE/([^-]+)(-*)/${1:/capitalize}/g}}Props {",
+      "\t${3:prop}: ${4:string}",
       "}",
       "",
-      "const $1 = ({ $4 }: $1Props) => {",
-			"\t$6",
-      "\treturn $7",
+      "const $1 = ({ $3 }: $1Props) => {",
+			"\t$5",
+      "\treturn $6",
       "}",
       "",
       "export default $1;"
