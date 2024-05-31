@@ -1,7 +1,9 @@
 {
-  "name": "modern-react-snippets",
-  "displayName": "modern-react-snippets",
-  "description": "Modern React snippets. No class!!",
+  "name": "modern-react-typescript-snippets",
+  "displayName": "modern-react-typescript-snippets",
+  "description": "Modern React Typescript snippets",
+  "publisher": "deerawan",
+  "author": "Budi Irawan",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
@@ -9,11 +11,23 @@
   "categories": [
     "Snippets"
   ],
+  "keywords": [
+    "react",
+    "typescript",
+    "react snippets",
+    "react typescript snippets",
+    "vscode",
+    "vscode-extension"
+  ],
   "contributes": {
     "snippets": [
       {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
+      },
+      {
         "language": "typescriptreact",
-        "path": "./snippets/typescriptreact.code-snippets"
+        "path": "./snippets/snippets.code-snippets"
       }
     ]
   }
