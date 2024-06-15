@@ -2,6 +2,8 @@
 
 This extension provides you with a variety of shortcuts to make writing modern React components faster and easier using Typescript.
 
+![Demo](./images/demo.gif)
+
 ## Features
 
 - Modern React with Typescript. No class 💪. No PropTypes 🕺.
