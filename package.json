@@ -1,11 +1,16 @@
 {
   "name": "vscode-modern-react-typescript-snippets",
-  "displayName": "modern-react-typescript-snippets",
-  "description": "Modern React Typescript snippets",
+  "displayName": "Modern React Typescript Snippets",
+  "description": "📚 A collection of modern React with Typescript snippets for Visual Studio Code. No class. No PropTypes.",
   "icon": "images/logo.jpg",
   "publisher": "deerawan",
   "author": "Budi Irawan",
   "version": "1.0.0",
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#61DAFB",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.78.0"
   },
