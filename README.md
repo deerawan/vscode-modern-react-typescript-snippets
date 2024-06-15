@@ -4,8 +4,8 @@ This extension provides you with a variety of shortcuts to make writing modern R
 
 ## Features
 
-- Modern React with Typescript. No class. No PropTypes.
-- Component snippets auto populate the component name based on filename which can be kebab-case or PascalCase
+- Modern React with Typescript. No class 💪. No PropTypes 🕺.
+- Component snippets auto populate the component name based on filename which support kebab-case or PascalCase
 - Component snippets support TS interface and type
 - Component snippets support functional declaration and arrow function
 - useState hook snippet auto populates the setter name
@@ -62,7 +62,7 @@ export default function |() {
 #### `rcf-i` - with interface
 
 ```typescriptreact
-export interface |Props {
+export| interface |Props {
   |:|
 }
 
@@ -75,7 +75,7 @@ export function |({ | }: |Props) {
 #### `rcf-di` - with default export and interface
 
 ```typescriptreact
-export interface |Props {
+export| interface |Props {
   |:|
 }
 
@@ -110,7 +110,7 @@ export default |;
 #### `rca-i` - with interface
 
 ```typescriptreact
-export interface |Props {
+export| interface |Props {
   |:|
 }
 
@@ -123,7 +123,7 @@ export const | = ({ | }: |Props) => {
 #### `rca-di` - with default export and interface
 
 ```typescriptreact
-export interface |Props {
+export| interface |Props {
   |:|
 }
 
